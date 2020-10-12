@@ -1,8 +1,9 @@
 package com.nexti.desafio.model;
 
-import com.sun.istack.NotNull;
+
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -11,7 +12,7 @@ public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @NotNull
     private String name;
@@ -20,11 +21,11 @@ public class Client {
 
     private Date birthdate;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
