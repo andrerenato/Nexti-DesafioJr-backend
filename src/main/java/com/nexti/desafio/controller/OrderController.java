@@ -40,7 +40,7 @@ public class OrderController {
     @GetMapping("/{id}")
     public ResponseEntity<Order> getById(@PathVariable Long id) {
         Optional<Order> order = orderService.getById(id);
-
+        System.out.println(order.get().getTotalAmount());
         return order.isPresent() ? ResponseEntity.ok(order.get()) : ResponseEntity.notFound().build();
     }
 
