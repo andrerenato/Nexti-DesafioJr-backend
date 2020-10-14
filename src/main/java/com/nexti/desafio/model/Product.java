@@ -5,6 +5,7 @@ package com.nexti.desafio.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "product")
@@ -23,7 +24,7 @@ public class Product {
     private String description;
 
     @NotNull
-    private Double value;
+    private BigDecimal value;
 
     private Integer quantity;
 
@@ -59,11 +60,11 @@ public class Product {
         this.description = description;
     }
 
-    public Double getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
-    public void setValue(Double value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
