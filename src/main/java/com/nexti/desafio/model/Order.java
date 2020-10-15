@@ -1,6 +1,7 @@
 package com.nexti.desafio.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -15,8 +16,8 @@ public class Order {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_client")
     @NotNull
+    @JoinColumn(name = "id_client")
     private Client client;
 
     @Column(name = "total_amount")
@@ -26,6 +27,7 @@ public class Order {
     private Date purchaseDate;
 
     @ManyToMany
+    @NotEmpty
     @JoinTable(name = "orders_product", joinColumns = { @JoinColumn(name = "id_orders") }, inverseJoinColumns = { @JoinColumn(name = "id_product") })
     private List<Product> products;
 
